@@ -1,0 +1,229 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- The HTML 4.01 Transitional DOCTYPE declaration-->
+<!-- above set at the top of the file will set     -->
+<!-- the browser's rendering engine into           -->
+<!-- "Quirks Mode". Replacing this declaration     -->
+<!-- with a "Standards Mode" doctype is supported, -->
+<!-- but may lead to some differences in layout.   -->
+
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>vkrish11-caakula-vaniredd</title>
+
+<link rel="stylesheet"
+	href="http://yui.yahooapis.com/pure/0.5.0/pure-nr-min.css">
+<style>
+.programlisting {
+	background-color: #FAFAFA;
+	border: 1px solid #bbbbbb;
+	margin: 10px 10px;
+	overflow: auto;
+	padding: 1em;
+	word-wrap: break-word;
+	-webkit-border-radius: 9px;
+	-moz-border-radius: 9px;
+	border-radius: 9px;
+}
+
+.myButton {
+	-moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+	box-shadow: inset 0px 1px 0px 0px #ffffff;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff
+		), color-stop(1, #f6f6f6));
+	background: -moz-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background: -webkit-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background: -o-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background: -ms-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background: linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',
+		endColorstr='#f6f6f6', GradientType=0);
+	background-color: #ffffff;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	border: 1px solid #dcdcdc;
+	display: inline-block;
+	cursor: pointer;
+	color: #666666;
+	font-family: arial;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 6px 24px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #ffffff;
+}
+
+.myButton:hover {
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6
+		), color-stop(1, #ffffff));
+	background: -moz-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background: -webkit-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background: -o-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background: -ms-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background: linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6',
+		endColorstr='#ffffff', GradientType=0);
+	background-color: #f6f6f6;
+}
+
+.myButton:active {
+	position: relative;
+	top: 1px;
+}
+</style>
+</head>
+
+<body style="padding: 20px">
+	<h1 align="center">CS553 ASSIGNMENT 3 (vkrish11,caakula,vaniredd)</h1>
+	<div class="pure-g programlisting">
+		<div class="pure-u-1">
+			<form action="/FileCreate" method="post"
+				class="pure-form pure-form-stacked">
+				<fieldset>
+					<legend>
+						<b>Create File</b>
+					</legend>
+					<div class="pure-control-group">
+						<label for="createfilename">File Name(Key)</label> <input
+							type="text" id="createfilename" name="createfilename" />
+					</div>
+					<div class="pure-control-group">
+						<label for="createfiledescription">Description</label>
+						<textarea name="createfiledescription" id="createfiledescription"
+							rows="3" cols="60"></textarea>
+					</div>
+					<div class="pure-control-group">
+						<label for="createfilesubmit"></label> <input type="submit"
+							id="createfilesubmit" value="Create File" class="myButton " />
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+
+	<div class="pure-g programlisting">
+		<div class="pure-u-1">
+			<form action="/FileUpload" method="post"
+				enctype="multipart/form-data" class="pure-form pure-form-stacked">
+				<fieldset>
+					<legend>
+						<b>Upload File</b>
+					</legend>
+					<div class="pure-control-group">
+						<label for="createfilename"></label> <input type="file"
+							name="uploadfilename" multiple class="myButton " />
+					</div>
+					<div class="pure-control-group">
+						<label for="uploadfilesubmit"></label> <input type="submit"
+							id="uploadfilesubmit" value="Upload File" class="myButton " />
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+
+	<div class="pure-g programlisting">
+		<div class="pure-u-1">
+			<div class="pure-form pure-form-stacked">
+				<fieldset>
+					<legend>
+						<b>List Files</b>
+					</legend>
+					<div class="pure-control-group">
+						<label for="listbutton"></label>
+						<button onclick="location.href='FileList'" id="listbutton"
+							class="myButton">View List Of Files</button>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="pure-g programlisting">
+		<div class="pure-u-1">
+			<form action="/FileDelete" method="get" class="pure-form">
+				<fieldset>
+					<legend>
+						<b>Delete Files</b>
+					</legend>
+
+					<label for="deletefilename">File Name(Key)</label> <input
+						type="text" id="deletefilename" name="fname" /> <label
+						for="deletefilesubmit"></label> <input type="submit"
+						id="deletefilesubmit" value="Delete File" class="myButton " />
+
+				</fieldset>
+			</form>
+			<br>
+			<form action="/FileDeleteAll" method="get" class="pure-form">
+				<input type="hidden" name="from" value="bucket"> <input
+					type="submit" value="Delete all files from bucket"
+					class="myButton ">
+
+			</form>
+			<br>
+			<form action="/FileDeleteAll" method="get" class="pure-form">
+				<input type="hidden" name="from" value="memcache"> <input
+					type="submit" value="Delete all files from memcache"
+					class="myButton ">
+			</form>
+		</div>
+	</div>
+
+	<div class="pure-g programlisting">
+		<div class="pure-u-1">
+			<form action="/FileFind" method="post" class="pure-form">
+				<fieldset>
+					<legend>
+						<b>Check File</b>
+					</legend>
+
+					<label for="findfilename">File Name(Key)</label> <input type="text"
+						id="findfilename" name="findfilename" /> <label
+						for="checkfilesubmit"></label> <input type="submit"
+						id="checkfilesubmit" value="Check File" class="myButton " />
+
+				</fieldset>
+			</form>
+		</div>
+	</div>
+
+	<div class="pure-g programlisting">
+		<div class="pure-u-1">
+			<form action="/FileView" method="get" class="pure-form">
+				<fieldset>
+					<legend>
+						<b>View File</b>
+					</legend>
+
+					<label for="viwefname">File Name(Key)</label> <input type="text"
+						id="viwefname" name="fname" /> <label for="viewfilesubmit"></label>
+					<input type="submit" id="viewfilesubmit" value="View File"
+						class="myButton " />
+
+				</fieldset>
+			</form>
+		</div>
+	</div>
+	
+	<div class="pure-g programlisting">
+		<div class="pure-u-1">
+			<form action="/FileSearchRegX" method="get" class="pure-form">
+				<fieldset>
+					<legend>
+						<b>Search Text in File</b>
+					</legend>
+ 					<input type="text"	id="serachfname" name="serachfname" />
+ 					<input type="text"	id="serachtext" name="serachtext" /> 
+					<input type="submit" id="serachsubmit" value="Search in File" class="myButton " />
+				</fieldset>
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>
